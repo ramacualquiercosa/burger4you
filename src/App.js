@@ -31,7 +31,7 @@ function App() {
   return (
     <appContext.Provider value ={[buguer, beer, chips]}>
     
-      <h1>PROYECTO LIMPIO</h1>
+      <h1>PROYECTO LIMPIO!</h1>
     
     </appContext.Provider>
   );
