@@ -1,40 +1,65 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
+import Test from './components/test';
 
-export const appContext = React.createContext()
+export const burgerContext = React.createContext()
+export const drinkContext = React.createContext()
+export const chipContext = React.createContext()
 
 function App() {
  
-  const [buguer, setBurger] = useState([])
+  const [burger, setBurger] = useState([])
   const [drink, setDrink] = useState([])
   const [chip, setChip] = useState([])
+  
 
   useEffect(()=>{
-      getBurgers()
-      getDrinks()
-      getChips()
-  },[])
+    getBurger()
+    getDrink()
+    getChip()
+ },[])
 
-  async function getBurgers(){
-    const respBurger = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=ee2648f9f1e9bd8b7424b1f5bb21b561&language=en-US&page=1')
-    setBurger(respBurger.data.results)}
+  async function getBurger(){
+    const respBurger = await axios.get('https://burger-561b3-default-rtdb.firebaseio.com/burgers.json')
+    console.log(respBurger.data)
+    setBurger(respBurger.data)
+  }
 
-  async function getDrinks(){
-    const respDrinks = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=ee2648f9f1e9bd8b7424b1f5bb21b561&language=en-US&page=1')
-    setDrink(respDrinks.data.results)}
+  async function getDrink(){
+    const respDrink = await axios.get('https://drink-a0211-default-rtdb.firebaseio.com/drinks.json')
+    console.log(respDrink.data)
+    setDrink(respDrink.data)
+  }
 
-  async function getChips(){
-    const respChip = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=ee2648f9f1e9bd8b7424b1f5bb21b561&language=en-US&page=1')
-    setChip(respChip.data.results)}
+  async function getChip(){
+    const respChip = await axios.get('https://chip-83964-default-rtdb.firebaseio.com/chips.json')
+    console.log(respChip.data)
+    setChip(respChip.data)
+  }
+
+
+
 
   return (
-    <appContext.Provider value ={[buguer, drink, chip]}>
+    <burgerContext.Provider value ={burger}>
+    <drinkContext.Provider value ={drink}>
+    <chipContext.Provider value ={chip}>
+      <Test/>
+    </chipContext.Provider> 
+    </drinkContext.Provider>
+    </burgerContext.Provider>
     
-      <h1>PROYECTO LIMPIO!</h1>
     
-    </appContext.Provider>
   );
 }
 
 export default App;
+
+
+
+
+// APIS
+// https://chip-83964-default-rtdb.firebaseio.com/chips.json
+// https://drink-a0211-default-rtdb.firebaseio.com/drinks.json
+// https://burger-561b3-default-rtdb.firebaseio.com/burgers.json
