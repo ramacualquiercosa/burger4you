@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Test from './components/test';
+import CarouselBurger from './components/carouselBurgers';
 
 export const burgerContext = React.createContext()
 export const drinkContext = React.createContext()
@@ -46,6 +47,7 @@ function App() {
     <drinkContext.Provider value ={drink}>
     <chipContext.Provider value ={chip}>
       <Test/>
+      <CarouselBurger/>
     </chipContext.Provider> 
     </drinkContext.Provider>
     </burgerContext.Provider>
