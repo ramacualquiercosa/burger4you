@@ -1,7 +1,11 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
+import Contacto from './components/contacto';
 import axios from 'axios';
 import Test from './components/test';
+import { Route, Routes } from 'react-router-dom';
+import ProductPage from './components/ProductPage';
+
 
 export const burgerContext = React.createContext()
 export const drinkContext = React.createContext()
@@ -42,15 +46,25 @@ function App() {
 
 
   return (
+    
     <burgerContext.Provider value ={burger}>
     <drinkContext.Provider value ={drink}>
     <chipContext.Provider value ={chip}>
-      <Test/>
+
+      <Routes>
+      <Route exact path="/" component={Test} />
+      <Route exact path="/ProductPage/:id" element={ProductPage} />
+      </Routes>
+      <Test></Test>
+      <Contacto></Contacto>
+      <ProductPage></ProductPage>
+
+
     </chipContext.Provider> 
     </drinkContext.Provider>
     </burgerContext.Provider>
     
-    
+
   );
 }
 
