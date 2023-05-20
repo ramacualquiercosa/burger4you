@@ -63,7 +63,10 @@ function Test() {
       <h1>Prueba API Bebidas:</h1>
       </div>
       <div className=" grid grid-cols-2 justify-items-center gap-4 py-4 grid-flow-row ">
+
         {drink.map((item, index) => (
+                <Link key={index} to={`/ProductPage/${index}`}>
+
           <div key={index} className="py-6">
             <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
               <div
@@ -79,9 +82,7 @@ function Test() {
                   <h3>Precio: {item.price}</h3>
                 </div>
                 <div className="flex item-center justify-between mt-3">
-                  <h1 className="text-gray-700 font-bold text-xl">
-                    {/* ${item.price} */}
-                  </h1>
+
                   <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
                     Add to Card
                   </button>
@@ -89,13 +90,18 @@ function Test() {
               </div>
             </div>
           </div>
+          </Link>
+
         ))}
       </div>
       <div className="flex items-center justify-center pt-7 pb-4 text-gray-900 font-bold text-2xl">
       <h1>Prueba API Entradas:</h1>
       </div>
       <div className=" grid grid-cols-2 justify-items-center gap-4 py-4 grid-flow-row ">
+
         {chip.map((item, index) => (
+                <Link key={index} to={`/ProductPage/${index}`}>
+
           <div key={index} className="py-6">
             <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
               <div
@@ -121,6 +127,8 @@ function Test() {
               </div>
             </div>
           </div>
+                    </Link>
+
         ))}
       </div>
     </>
