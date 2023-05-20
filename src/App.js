@@ -1,10 +1,13 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
-import Contacto from './components/contacto';
+import Navbar from './components/Navbar';
+import Contacto from './pages/contacto';
 import axios from 'axios';
-import Test from './components/test';
+import Test from './pages/test';
 import { Route, Routes } from 'react-router-dom';
-import ProductPage from './components/ProductPage';
+import ProductPage from './pages/ProductPage';
+import Productos from './pages/Productos';
+
 
 
 export const burgerContext = React.createContext()
@@ -13,9 +16,9 @@ export const chipContext = React.createContext()
 
 function App() {
  
-  const [burger, setBurger] = useState([])
-  const [drink, setDrink] = useState([])
-  const [chip, setChip] = useState([])
+  const [burger, setBurger] = useState([]);
+  const [drink, setDrink] = useState([]);
+  const [chip, setChip] = useState([]);
   
 
   useEffect(()=>{
@@ -51,14 +54,12 @@ function App() {
     <drinkContext.Provider value ={drink}>
     <chipContext.Provider value ={chip}>
 
+      <Navbar></Navbar>
       <Routes>
-      <Route exact path="/" component={Test} />
-      <Route exact path="/ProductPage/:id" element={ProductPage} />
+      <Route exact path="/Contacto" element={<Contacto />} />
+      <Route exact path="/ProductPage/:id" element={<ProductPage />} />      
+      <Route exact path='/Productos' element = {<Productos/>} ></Route>
       </Routes>
-      <Test></Test>
-      <Contacto></Contacto>
-      <ProductPage></ProductPage>
-
 
     </chipContext.Provider> 
     </drinkContext.Provider>

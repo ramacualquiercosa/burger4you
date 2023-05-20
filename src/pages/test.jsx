@@ -10,6 +10,7 @@ function Test() {
   const burger = useContext(burgerContext);
   const drink = useContext(drinkContext);
   const chip = useContext(chipContext);
+
   return (
     <>
     <div className="flex items-center justify-center pt-4 text-gray-900 font-bold text-2xl">
@@ -20,7 +21,7 @@ function Test() {
 
 // agregado
 
-<Link to={`/ProductPage/${index}`}>
+<Link key={index} to={`/ProductPage/${index}`}>
 
           <div key={index} className="py-6">
             <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
