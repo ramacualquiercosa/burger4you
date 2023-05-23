@@ -6,6 +6,9 @@ import axios from 'axios';
 import Test from './pages/test';
 import { Route, Routes } from 'react-router-dom';
 import ProductPage from './pages/ProductPage';
+import ProductPageB from './pages/ProductPageB';
+import ProductPageC from './pages/ProductPageC';
+
 import Productos from './pages/Productos';
 
 
@@ -58,6 +61,8 @@ function App() {
       <Routes>
       <Route exact path="/Contacto" element={<Contacto />} />
       <Route exact path="/ProductPage/:id" element={<ProductPage />} />      
+      <Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
+      <Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
       <Route exact path='/Productos' element = {<Productos/>} ></Route>
       </Routes>
 

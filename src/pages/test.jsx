@@ -13,124 +13,90 @@ function Test() {
 
   return (
     <>
-    <div className="flex items-center justify-center pt-4 text-gray-900 font-bold text-2xl">
-      <h1 >Prueba API Hamburguesas:</h1>
-      </div>
-      <div className=" grid grid-cols-2 gap-2 py-2 justify-items-center grid-flow-row ">
-        {burger.map((item, index) => (
+    <div className="bg-white">
+      <div className="mx-auto max-w-1xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <h1 className="text-center text-3xl">PRODUCTOS</h1>
 
-// agregado
+
+      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-14">        {burger.map((item, index) => (
+
+      <Link key={index} to={`/ProductPageB/${index}`}>
+
+              <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <div
+                className="bg-contain bg-no-repeat bg-center h-full"
+                style={{ backgroundImage: `url(${item.img})`}}></div>
+                
+              </div>
+              <div className="h-1/3">
+
+              <h2 className="mt-4 text-2xl text-gray-900">{item.name}</h2>
+              <h3 className="mt-1 text-lg font-medium text-gray-900">{item.price}</h3>
+              
+            <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
+                            Add to Card
+            </button>
+            </div>
+            </Link>
+
+
+        ))}
+              </div>
+
+
+              <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-12">        {drink.map((item, index) => (
 
 <Link key={index} to={`/ProductPage/${index}`}>
 
-          <div key={index} className="py-6">
-            <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
+        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <div
+          className="bg-contain bg-no-repeat bg-center h-full"
+          style={{ backgroundImage: `url(${item.img})`}}></div>
+          
+        </div>
+        <div className="h-1/3">
 
-
-
-              <div
-                className="w-1/3 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: `url(${item.img})` }}
-              ></div>
-
-
-              <div className="w-2/3 p-4">
-                <h1 className="text-gray-900 font-bold text-2xl">
-                  {item.name}
-                </h1>
-                <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
-                <div className="flex item-center mt-2 gap-5">
-                  <h3>Precio: {item.price}</h3>
-                </div>
-                <div className="flex item-center justify-between mt-3">
-                  <h1 className="text-gray-700 font-bold text-xl">
-                    {/* ${item.price} */}
-                  </h1>
-                  <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-                    Add to Card
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </Link>
-
-
-        ))}
-
+        <h2 className="mt-4 text-2xl text-gray-900">{item.name}</h2>
+        <h3 className="mt-1 text-lg font-medium text-gray-900">{item.price}</h3>
+        
+      <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
+                      Add to Card
+      </button>
       </div>
-      <div className="flex items-center justify-center pt-7 pb-4 text-gray-900 font-bold text-2xl">
-      <h1>Prueba API Bebidas:</h1>
+      </Link>
+
+
+  ))}
+        </div>
+
+        
+      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-12">        {chip.map((item, index) => (
+
+<Link key={index} to={`/ProductPageC/${index}`}>
+
+        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <div
+          className="bg-contain bg-no-repeat bg-center h-full"
+          style={{ backgroundImage: `url(${item.img})`}}></div>
+          
+        </div>
+        <div className="h-1/3">
+
+        <h2 className="mt-4 text-2xl text-gray-900">{item.name}</h2>
+        <h3 className="mt-1 text-lg font-medium text-gray-900">{item.price}</h3>
+        
+      <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
+                      Add to Card
+      </button>
       </div>
-      <div className=" grid grid-cols-2 justify-items-center gap-4 py-4 grid-flow-row ">
+      </Link>
 
-        {drink.map((item, index) => (
-                <Link key={index} to={`/ProductPage/${index}`}>
 
-          <div key={index} className="py-6">
-            <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
-              <div
-                className="w-1/3 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: `url(${item.img})` }}
-              ></div>
-              <div className="w-2/3 p-4">
-                <h1 className="text-gray-900 font-bold text-2xl">
-                  {item.name}
-                </h1>
-                <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
-                <div className="flex item-center mt-2 gap-5">
-                  <h3>Precio: {item.price}</h3>
-                </div>
-                <div className="flex item-center justify-between mt-3">
+  ))}
+        </div>
 
-                  <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-                    Add to Card
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </Link>
-
-        ))}
-      </div>
-      <div className="flex items-center justify-center pt-7 pb-4 text-gray-900 font-bold text-2xl">
-      <h1>Prueba API Entradas:</h1>
-      </div>
-      <div className=" grid grid-cols-2 justify-items-center gap-4 py-4 grid-flow-row ">
-
-        {chip.map((item, index) => (
-                <Link key={index} to={`/ProductPage/${index}`}>
-
-          <div key={index} className="py-6">
-            <div className="flex max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden">
-              <div
-                className="w-1/3 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: `url(${item.img})` }}
-              ></div>
-              <div className="w-2/3 p-4">
-                <h1 className="text-gray-900 font-bold text-2xl">
-                  {item.name}
-                </h1>
-                <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
-                <div className="flex item-center mt-2 gap-5">
-                  <h3>Precio: {item.price}</h3>
-                </div>
-                <div className="flex item-center justify-between mt-3">
-                  <h1 className="text-gray-700 font-bold text-xl">
-                    {/* ${item.price} */}
-                  </h1>
-                  <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-                    Add to Card
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-                    </Link>
-
-        ))}
-      </div>
+</div>
+</div>
     </>
   );
 }
