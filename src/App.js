@@ -23,19 +23,19 @@ function App() {
 
   async function getBurger(){
     const respBurger = await axios.get('https://burger-561b3-default-rtdb.firebaseio.com/burgers.json')
-    console.log(respBurger.data)
+
     setBurger(respBurger.data)
   }
 
   async function getDrink(){
     const respDrink = await axios.get('https://drink-a0211-default-rtdb.firebaseio.com/drinks.json')
-    console.log(respDrink.data)
+
     setDrink(respDrink.data)
   }
 
   async function getChip(){
     const respChip = await axios.get('https://chip-83964-default-rtdb.firebaseio.com/chips.json')
-    console.log(respChip.data)
+  
     setChip(respChip.data)
   }
 
@@ -46,7 +46,7 @@ function App() {
     <burgerContext.Provider value ={burger}>
     <drinkContext.Provider value ={drink}>
     <chipContext.Provider value ={chip}>
-      <Test/>
+      {/* <Test/> */}
       <CarouselBurger/>
     </chipContext.Provider> 
     </drinkContext.Provider>
