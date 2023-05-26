@@ -2,27 +2,30 @@ import React from "react";
 import carouselImg from "../assets/img/carouselImg";
 
 
-export default function CarouselBurger() {
+export default function CarouselProducts() {
     
   return (
     
-    <div className="max-w-2xl mx-auto p-4">
-        <h1>Conoce nuestras hamburguesas...</h1>
+    <div className="max-w-2xl mx-auto  bg-black">
+        <h1 className="text-center text-2xl text-white p-4">PROBA NUESTROS PRODUCTOS</h1>
         <div id="default-carousel" className="relative" data-carousel="slide">
             
             <div className="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
                 
                 <div className="hidden duration-700 ease-in-out " data-carousel-item>
                     <span className="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src={carouselImg[0]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 bg-gray-800" alt="..."/>
+                    <img src={carouselImg[1]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 bg-gray-800" alt="..."/>
+                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Hamburguesas</a>
                 </div>
                 
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src={carouselImg[1]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 " alt="..."/>
+                    <img src={carouselImg[4]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 " alt="..."/>
+                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Bebidas</a>
                 </div>
               
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src={carouselImg[2]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
+                    <img src={carouselImg[5]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
+                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Entradas</a>
                 </div>
             </div>
             
@@ -45,7 +48,7 @@ export default function CarouselBurger() {
                 </span>
             </button>
         </div>
-        <h2 className="flex justify-end">ver mas</h2>
+        
     
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
