@@ -21,7 +21,8 @@ export default function CarouselPromos() {
                 
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src={carouselImg[6]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 " alt="..."/>
-                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">15% off abonando con mercado pago</a>
+                    <h2 className="block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg w-full p-8">15% off abonando con mercado pago</h2>
+                    
                 </div>
               
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
