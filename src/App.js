@@ -2,6 +2,9 @@ import './App.css';
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Test from './components/test';
+import { Route , Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 export const burgerContext = React.createContext()
 export const drinkContext = React.createContext()
@@ -42,15 +45,22 @@ function App() {
 
 
   return (
-    <burgerContext.Provider value ={burger}>
-    <drinkContext.Provider value ={drink}>
-    <chipContext.Provider value ={chip}>
-      <Test/>
-    </chipContext.Provider> 
-    </drinkContext.Provider>
-    </burgerContext.Provider>
-    
-    
+    <>
+      <Routes>
+        <Route path="api" element={Test} />
+      </Routes>
+
+      <burgerContext.Provider value={burger}>
+        <drinkContext.Provider value={drink}>
+          <chipContext.Provider value={chip}>
+
+            <Navbar />
+            <Test />
+            <Footer/>
+          </chipContext.Provider>
+        </drinkContext.Provider>
+      </burgerContext.Provider>
+    </>
   );
 }
 
