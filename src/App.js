@@ -2,8 +2,14 @@ import './App.css';
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Test from './components/test';
+
+import { Route , Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import CarouselProducts from './components/carouselProducts';
 import CarouselPromos from './components/carouselPromos';
+
 
 export const burgerContext = React.createContext()
 export const drinkContext = React.createContext()
@@ -44,17 +50,26 @@ function App() {
 
 
   return (
-    <burgerContext.Provider value ={burger}>
-    <drinkContext.Provider value ={drink}>
-    <chipContext.Provider value ={chip}>
-      <Test/>
-      <CarouselProducts/>
+
+    <>
+      <Routes>
+        <Route path="api" element={Test} />
+      </Routes>
+
+      <burgerContext.Provider value={burger}>
+        <drinkContext.Provider value={drink}>
+          <chipContext.Provider value={chip}>
+
+            <Navbar />
+             <CarouselProducts/>
       <CarouselPromos/>
-    </chipContext.Provider> 
-    </drinkContext.Provider>
-    </burgerContext.Provider>
-    
-    
+            <Test />
+            <Footer/>
+          </chipContext.Provider>
+        </drinkContext.Provider>
+      </burgerContext.Provider>
+    </>
+
   );
 }
 
