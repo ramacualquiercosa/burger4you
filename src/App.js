@@ -13,6 +13,14 @@ import Productos from './pages/Productos';
 
 
 
+import { Route , Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+import CarouselProducts from './components/carouselProducts';
+import CarouselPromos from './components/carouselPromos';
+
+
 export const burgerContext = React.createContext()
 export const drinkContext = React.createContext()
 export const chipContext = React.createContext()
@@ -31,20 +39,20 @@ function App() {
  },[])
 
   async function getBurger(){
-    const respBurger = await axios.get('https://burger-561b3-default-rtdb.firebaseio.com/burgers.json')
-    console.log(respBurger.data)
+    const respBurger = await axios.get('https://burger-bad89-default-rtdb.firebaseio.com/burgers.json')
+
     setBurger(respBurger.data)
   }
 
   async function getDrink(){
-    const respDrink = await axios.get('https://drink-a0211-default-rtdb.firebaseio.com/drinks.json')
-    console.log(respDrink.data)
+    const respDrink = await axios.get('https://drink-c644c-default-rtdb.firebaseio.com/drinks.json')
+
     setDrink(respDrink.data)
   }
 
   async function getChip(){
-    const respChip = await axios.get('https://chip-83964-default-rtdb.firebaseio.com/chips.json')
-    console.log(respChip.data)
+    const respChip = await axios.get('https://chip-4890a-default-rtdb.firebaseio.com/chips.json')
+  
     setChip(respChip.data)
   }
 
@@ -52,24 +60,46 @@ function App() {
 
 
   return (
-    
-    <burgerContext.Provider value ={burger}>
-    <drinkContext.Provider value ={drink}>
-    <chipContext.Provider value ={chip}>
 
-      <Navbar></Navbar>
+    
+    //<burgerContext.Provider value ={burger}>
+    //<drinkContext.Provider value ={drink}>
+    //<chipContext.Provider value ={chip}>
+
+      //<Navbar></Navbar>
+      //<Routes>
+      //<Route exact path="/Contacto" element={<Contacto />} />
+      //<Route exact path="/ProductPage/:id" element={<ProductPage />} />      
+      //<Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
+      //<Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
+      //<Route exact path='/Productos' element = {<Productos/>} ></Route>
+      //</Routes>
+
+    //</chipContext.Provider> 
+    //</drinkContext.Provider>
+    //</burgerContext.Provider>
+
+
+    <>
       <Routes>
-      <Route exact path="/Contacto" element={<Contacto />} />
-      <Route exact path="/ProductPage/:id" element={<ProductPage />} />      
-      <Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
-      <Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
-      <Route exact path='/Productos' element = {<Productos/>} ></Route>
+        <Route path="api" element={Test} />
       </Routes>
 
-    </chipContext.Provider> 
-    </drinkContext.Provider>
-    </burgerContext.Provider>
-    
+      <burgerContext.Provider value={burger}>
+        <drinkContext.Provider value={drink}>
+          <chipContext.Provider value={chip}>
+
+            <Navbar />
+            <CarouselProducts/>
+            <CarouselPromos/>
+            <Test />
+            <Footer/>
+            
+          </chipContext.Provider>
+        </drinkContext.Provider>
+      </burgerContext.Provider>
+    </>
+
 
   );
 }
