@@ -4,7 +4,11 @@ import Navbar from './components/Navbar';
 import Contacto from './pages/contacto';
 import axios from 'axios';
 import Test from './pages/test';
+import CarouselProducts from './components/carouselProducts';
+import CarouselPromos from './components/carouselPromos';
+import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
+
 import ProductPage from './pages/ProductPage';
 import ProductPageB from './pages/ProductPageB';
 import ProductPageC from './pages/ProductPageC';
@@ -13,12 +17,10 @@ import Productos from './pages/Productos';
 
 
 
-import { Route , Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Navbar from './components/Navbar';
 
-import CarouselProducts from './components/carouselProducts';
-import CarouselPromos from './components/carouselPromos';
+
+
 
 
 export const burgerContext = React.createContext()
@@ -61,26 +63,28 @@ function App() {
 
   return (
 
-    
-    //<burgerContext.Provider value ={burger}>
-    //<drinkContext.Provider value ={drink}>
-    //<chipContext.Provider value ={chip}>
-
-      //<Navbar></Navbar>
-      //<Routes>
-      //<Route exact path="/Contacto" element={<Contacto />} />
-      //<Route exact path="/ProductPage/:id" element={<ProductPage />} />      
-      //<Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
-      //<Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
-      //<Route exact path='/Productos' element = {<Productos/>} ></Route>
-      //</Routes>
-
-    //</chipContext.Provider> 
-    //</drinkContext.Provider>
-    //</burgerContext.Provider>
+   
 
 
     <>
+     
+     {/* <burgerContext.Provider value ={burger}>
+    <drinkContext.Provider value ={drink}>
+    <chipContext.Provider value ={chip}>
+
+      <Navbar></Navbar>
+      <Routes>
+      <Route exact path="/Contacto" element={<Contacto />} />
+      <Route exact path="/ProductPage/:id" element={<ProductPage />} />      
+      <Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
+      <Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
+      <Route exact path='/Productos' element = {<Productos/>} ></Route>
+      </Routes>
+
+    </chipContext.Provider> 
+    </drinkContext.Provider>
+    </burgerContext.Provider> */}
+
       <Routes>
         <Route path="api" element={Test} />
       </Routes>
@@ -93,8 +97,9 @@ function App() {
             <CarouselProducts/>
             <CarouselPromos/>
             <Test />
+            <Contacto/>
             <Footer/>
-            
+           
           </chipContext.Provider>
         </drinkContext.Provider>
       </burgerContext.Provider>
