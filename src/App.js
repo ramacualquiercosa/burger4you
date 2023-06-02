@@ -1,7 +1,17 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
+import Navbar from './components/Navbar';
+import Contacto from './pages/contacto';
 import axios from 'axios';
-import Test from './components/test';
+import Test from './pages/test';
+import { Route, Routes } from 'react-router-dom';
+import ProductPage from './pages/ProductPage';
+import ProductPageB from './pages/ProductPageB';
+import ProductPageC from './pages/ProductPageC';
+
+import Productos from './pages/Productos';
+
+
 
 import { Route , Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -17,9 +27,9 @@ export const chipContext = React.createContext()
 
 function App() {
  
-  const [burger, setBurger] = useState([])
-  const [drink, setDrink] = useState([])
-  const [chip, setChip] = useState([])
+  const [burger, setBurger] = useState([]);
+  const [drink, setDrink] = useState([]);
+  const [chip, setChip] = useState([]);
   
 
   useEffect(()=>{
@@ -51,6 +61,25 @@ function App() {
 
   return (
 
+    
+    //<burgerContext.Provider value ={burger}>
+    //<drinkContext.Provider value ={drink}>
+    //<chipContext.Provider value ={chip}>
+
+      //<Navbar></Navbar>
+      //<Routes>
+      //<Route exact path="/Contacto" element={<Contacto />} />
+      //<Route exact path="/ProductPage/:id" element={<ProductPage />} />      
+      //<Route exact path='/ProductPageB/:id' element = {<ProductPageB/>} ></Route>
+      //<Route exact path='/ProductPageC/:id' element = {<ProductPageC/>} ></Route>
+      //<Route exact path='/Productos' element = {<Productos/>} ></Route>
+      //</Routes>
+
+    //</chipContext.Provider> 
+    //</drinkContext.Provider>
+    //</burgerContext.Provider>
+
+
     <>
       <Routes>
         <Route path="api" element={Test} />
@@ -61,14 +90,16 @@ function App() {
           <chipContext.Provider value={chip}>
 
             <Navbar />
-             <CarouselProducts/>
-      <CarouselPromos/>
+            <CarouselProducts/>
+            <CarouselPromos/>
             <Test />
             <Footer/>
+            
           </chipContext.Provider>
         </drinkContext.Provider>
       </burgerContext.Provider>
     </>
+
 
   );
 }
