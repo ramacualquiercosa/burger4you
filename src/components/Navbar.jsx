@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Inicio", href: "/Home", current: false },
-  { name: "Nosotros", href: "/", current: false },
+  { name: "Nosotros", href: "#", current: false },
   { name: "Productos", href: "/Productos", current: false },
   { name: "Contacto", href: "/Contacto", current: false },
 ];
@@ -32,19 +32,21 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block  h-14 w-auto lg:hidden"
-                    src={require("../assets/img/logo4.png")}
+                  <a href="/home"><img
+                    className="block  h-8 w-auto lg:hidden"
+                    src={require("../assets/img/logo3.png")}
                     alt="Your Company"
-                  />
-                  <img
-                    className="hidden h-14 w-auto lg:block"
-                    src={require("../assets/img/logo4.png")}
+                  /></a>
+                  
+                  <a href="/home"><img
+                    className="hidden h-9 w-auto lg:block"
+                    src={require("../assets/img/logo3.png")}
                     alt="Burgers 4 you"
-                  />
+                  /></a>
+                  
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                <div className="hidden sm:ml-6 sm:block justify-center">
+                  <div className="flex space-x-4 items-center justify-center">
                     {navigation.map((item) => (
                       <a
                         key={item.name}

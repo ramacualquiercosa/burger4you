@@ -2,12 +2,10 @@ import React from "react";
 import FormContact from "../components/FormContact";
 
 function Contacto () {
-
 return (
-
-<>
-    <FormContact/>
-</>
+    <>
+        <FormContact/>
+    </>
 )}
 
 export default Contacto

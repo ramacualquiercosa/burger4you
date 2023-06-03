@@ -4,13 +4,11 @@ import CarouselPromos from "../components/carouselPromos";
 import FormContact from "../components/FormContact";
 
 function Home () {
-
 return (
     <>
         <CarouselProducts/>
         <CarouselPromos/>
         <FormContact/>
-
     </>
 )
 }

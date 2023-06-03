@@ -2,24 +2,25 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
-
+//Componentes   
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+//Paginas
 import Home from "./pages/home";
 import Productos from "./pages/Productos";
 import Contacto from "./pages/contacto";
 import ProductPage from "./pages/ProductPage";
 import ProductPageB from "./pages/ProductPageB";
 import ProductPageC from "./pages/ProductPageC";
-
-
-
+//Contextos
 export const burgerContext = React.createContext();
 export const drinkContext = React.createContext();
 export const chipContext = React.createContext();
 
+
+
 function App() {
+  //Estados
   const [burger, setBurger] = useState([]);
   const [drink, setDrink] = useState([]);
   const [chip, setChip] = useState([]);
@@ -30,6 +31,7 @@ function App() {
     getChip();
   }, []);
 
+  //Fetch
   async function getBurger() {
     const respBurger = await axios.get("https://burger-bad89-default-rtdb.firebaseio.com/burgers.json");
     setBurger(respBurger.data);
@@ -51,9 +53,10 @@ function App() {
         <drinkContext.Provider value={drink}>
           <chipContext.Provider value={chip}>
 
-            <Navbar />
+            <Navbar/>
 
             <Routes>
+              <Route exact path="/" element={<Home />} />
               <Route exact path="/Home" element={<Home />} />
               <Route exact path="/Contacto" element={<Contacto />} />
               <Route exact path="/ProductPage/:id" element={<ProductPage />} />

@@ -1,14 +1,12 @@
 import React from "react";
-import Test from "./test";
+import Cards from "../components/Cards";
 
 function Productos () {
-
 return (
-
-<>
-<Test></Test>
-</>
+    <>
+        <Cards/>
+    </>
 )
 }
 
-export default Productos
+export default Cards
