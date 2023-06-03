@@ -6,6 +6,7 @@ import Test from './components/test';
 import { Route , Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Nosotros from "./components/Nosotros"
 
 import CarouselProducts from './components/carouselProducts';
 import CarouselPromos from './components/carouselPromos';
@@ -50,26 +51,44 @@ function App() {
 
 
   return (
-
     <>
+      <Navbar />
       <Routes>
-        <Route path="api" element={Test} />
+        <Route path="/products" element={<Test />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+
+        <Route
+          path="/"
+          element={
+            <>
+              <CarouselProducts />
+              <CarouselPromos />
+            </>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <burgerContext.Provider value={burger}>
+              <drinkContext.Provider value={drink}>
+                <chipContext.Provider value={chip}>
+                  <Test />
+                </chipContext.Provider>
+              </drinkContext.Provider>
+            </burgerContext.Provider>
+          }
+        />
       </Routes>
 
       <burgerContext.Provider value={burger}>
         <drinkContext.Provider value={drink}>
           <chipContext.Provider value={chip}>
-
-            <Navbar />
-             <CarouselProducts/>
-      <CarouselPromos/>
             <Test />
-            <Footer/>
           </chipContext.Provider>
         </drinkContext.Provider>
       </burgerContext.Provider>
+      <Footer />
     </>
-
   );
 }
 

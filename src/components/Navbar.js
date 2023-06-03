@@ -1,11 +1,11 @@
 import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure, } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 
 
 const navigation = [
-  { name: "Nosotros", href: "/", current: false },
+  { name: "Quienes somos", href: "/nosotros", current: false },
   { name: "Productos", href: "/", current: false },
   { name: "Contacto", href: "/", current: false },
 ];
@@ -33,17 +33,30 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              
                 <div className="flex flex-shrink-0 items-center">
+                     <a
+                  href="/"
+                  className="flex items-center text-gray-400 hover:text-white"
+                > 
                   <img
                     className="block  h-14 w-auto lg:hidden"
                     src={require("./logo4.png")}
                     alt="Your Company"
+                    
                   />
+                  </a>
+                     <a
+                  href="/"
+                  className="flex items-center text-gray-400 hover:text-white"
+                > 
                   <img
-                    className="hidden h-14 w-auto lg:block"
+                    className=" hidden h-14 w-auto lg:block"
                     src={require("./logo4.png")}
                     alt="Burgers 4 you"
                   />
+                  </a>
+                
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
