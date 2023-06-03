@@ -13,16 +13,16 @@ function Test() {
 
   return (
     <>
-    <div className="bg-dark">
+    <div className="bg-dark" >
       <div className="mx-auto max-w-1xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h1 className="text-center text-3xl text-white">PRODUCTOS</h1>
+      <h1 className="text-center text-3xl text-white" data-aos="zoom-in">PRODUCTOS</h1>
 
 
-      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-14">        {burger.map((item, index) => (
+      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-14" >        {burger.map((item, index) => (
 
       <Link key={index} to={`/ProductPageB/${index}`}>
 
-              <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
               <div
                 className="bg-contain bg-no-repeat bg-center h-full"
                 style={{ backgroundImage: `url(${item.img})`}}></div>
@@ -48,7 +48,7 @@ function Test() {
 
 <Link key={index} to={`/ProductPage/${index}`}>
 
-        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
         <div
           className="bg-contain bg-no-repeat bg-center h-full"
           style={{ backgroundImage: `url(${item.img})`}}></div>
@@ -74,7 +74,7 @@ function Test() {
 
 <Link key={index} to={`/ProductPageC/${index}`}>
 
-        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
         <div
           className="bg-contain bg-no-repeat bg-center h-full"
           style={{ backgroundImage: `url(${item.img})`}}></div>

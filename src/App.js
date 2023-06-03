@@ -67,7 +67,7 @@ function App() {
               <Route exact path="/Productos" element={<Productos />}></Route>
             </Routes>
 
-            <Footer />
+            <Footer/>
 
           </chipContext.Provider>
         </drinkContext.Provider>

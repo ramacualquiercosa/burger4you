@@ -6,7 +6,7 @@ export default function CarouselPromos() {
     
   return (
     
-    <div className="max-w-2xl mx-auto  bg-black">
+    <div className="max-w-2xl mx-auto  bg-black" data-aos="zoom-in">
         <h1 className="text-center text-2xl text-white p-4">PROMOS ESPECIALES</h1>
         <div id="default-carousel" className="relative" data-carousel="slide">
             

@@ -1,12 +1,16 @@
 import React from "react";
 import carouselImg from "../assets/img/carouselImg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 
 export default function CarouselProducts() {
     
   return (
     
-    <div className="max-w-2xl mx-auto  bg-black">
+    <div className="max-w-2xl mx-auto  bg-black" data-aos="zoom-in">
         <h1 className="text-center text-2xl text-white p-4">PROBA NUESTROS PRODUCTOS</h1>
         <div id="default-carousel" className="relative" data-carousel="slide">
             

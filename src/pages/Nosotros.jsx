@@ -34,7 +34,7 @@ const features = [
 
 function Nosotros() {
   return (
-    <div className="bg-dark py-24 sm:py-32">
+    <div className="bg-dark py-24 sm:py-32" data-aos="zoom-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-4xl font-semibold leading-7 text-red-900 ">
