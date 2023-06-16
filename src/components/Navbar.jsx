@@ -6,6 +6,7 @@ const navigation = [
   { name: "Nosotros", href: "/Nosotros", current: false },
   { name: "Productos", href: "/Productos", current: false },
   { name: "Contacto", href: "/Contacto", current: false },
+  { name: "Carrito", href: "/Cart", current: false },
 ];
 
 function classNames(...classes) {
