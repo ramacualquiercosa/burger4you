@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+
 import { Disclosure, } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -33,32 +33,29 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              
                 <div className="flex flex-shrink-0 items-center">
-                     <a
-                  href="/"
-                  className="flex items-center text-gray-400 hover:text-white"
-                > 
-                  <img
-                    className="block  h-14 w-auto lg:hidden"
-                    src={require("./logo4.png")}
-                    alt="Your Company"
-                    
-                  />
+                  <a
+                    href="/"
+                    className="flex items-center text-gray-400 hover:text-white"
+                  >
+                    <img
+                      className="block  h-14 w-auto lg:hidden"
+                      src={require("./logo4.png")}
+                      alt="Your Company"
+                    />
                   </a>
-                     <a
-                  href="/"
-                  className="flex items-center text-gray-400 hover:text-white"
-                > 
-                  <img
-                    className=" hidden h-14 w-auto lg:block"
-                    src={require("./logo4.png")}
-                    alt="Burgers 4 you"
-                  />
+                  <a
+                    href="/"
+                    className="flex items-center text-gray-400 hover:text-white"
+                  >
+                    <img
+                      className=" hidden h-14 w-auto lg:block"
+                      src={require("./logo4.png")}
+                      alt="Burgers 4 you"
+                    />
                   </a>
-                
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
+                <div className="hidden sm:ml-6 sm:block flex items-center">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
@@ -90,8 +87,6 @@ export default function Navbar() {
                     className="h-6 w-6"
                   />
                 </a>
-
-               
               </div>
             </div>
           </div>
