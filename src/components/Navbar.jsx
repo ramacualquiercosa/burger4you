@@ -6,6 +6,7 @@ const navigation = [
   { name: "Nosotros", href: "/Nosotros", current: false },
   { name: "Productos", href: "/Productos", current: false },
   { name: "Contacto", href: "/Contacto", current: false },
+  { name: "Carrito", href: "/Cart", current: false },
 ];
 
 function classNames(...classes) {
@@ -14,7 +15,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-red-900">
+    <Disclosure as="nav" className="bg-red-900" data-aos="zoom-in">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
