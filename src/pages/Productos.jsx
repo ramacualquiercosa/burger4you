@@ -2,9 +2,16 @@ import React from "react";
 import Cards from "../components/Cards";
 
 function Productos () {
-return (
+
+    const searchParams = new URLSearchParams(window.location.search);
+    let search = searchParams.get('item');
+    
+
+    return (
     <>
-        <Cards/>
+       
+        <Cards FiltroProducto={search}/>
+
     </>
 )
 }

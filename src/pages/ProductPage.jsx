@@ -71,7 +71,7 @@ return (
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{product.name}</h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{product.description}</p>
         <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded w-36">
-        Add to Card
+        Agregar a mi carrito
       </button>
       <Link to={`/Productos`}>
       <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded  w-36 mt-2">
