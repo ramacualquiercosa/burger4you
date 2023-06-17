@@ -8,7 +8,7 @@ return (
 <>
 <section className="bg-dark dark:bg-gray-900" data-aos="zoom-in">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-4xl tracking-tight  text-center text-white dark:text-white">Dejanos tu mensaje</h2>
+      <h2 className="mb-4 text-3xl tracking-tight  text-center text-white dark:text-white">Dejanos tu mensaje</h2>
       <p className="mb-8 lg:mb-16 font-light text-center text-white dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
       <form action="#" className="space-y-8">
           <div>
