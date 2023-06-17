@@ -9,14 +9,14 @@ import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Productos from "./pages/Productos";
 import Contacto from "./pages/contacto";
-import ProductPage from "./pages/ProductPage";
-import ProductPageB from "./pages/ProductPageB";
-import ProductPageC from "./pages/ProductPageC";
+
 import Nosotros from "./pages/Nosotros";
+import ShoppingCart from "./pages/ShoppingCart";
 //Contextos
 export const burgerContext = React.createContext();
 export const drinkContext = React.createContext();
 export const chipContext = React.createContext();
+export const cartContext = React.createContext();
 
 
 
@@ -25,14 +25,16 @@ function App() {
   const [burger, setBurger] = useState([]);
   const [drink, setDrink] = useState([]);
   const [chip, setChip] = useState([]);
+  
 
   useEffect(() => {
     getBurger();
     getDrink();
     getChip();
+    
   }, []);
 
-  //Fetch
+ //Fetch
   async function getBurger() {
     const respBurger = await axios.get("https://burger-bad89-default-rtdb.firebaseio.com/burgers.json");
     setBurger(respBurger.data);
@@ -47,13 +49,13 @@ function App() {
     const respChip = await axios.get("https://chip-4890a-default-rtdb.firebaseio.com/chips.json");
     setChip(respChip.data);
   }
-
+  
   return (
     <>
       <burgerContext.Provider value={burger}>
         <drinkContext.Provider value={drink}>
           <chipContext.Provider value={chip}>
-
+            
             <Navbar/>
 
             <Routes>
@@ -61,14 +63,13 @@ function App() {
               <Route exact path="/Home" element={<Home />} />
               <Route exact path="/Contacto" element={<Contacto/>} />
               <Route exact path="/Nosotros" element={<Nosotros/>} />
-              <Route exact path="/ProductPage/:id" element={<ProductPage />} />
-              <Route exact path="/ProductPageB/:id" element={<ProductPageB />}></Route>
-              <Route exact path="/ProductPageC/:id" element={<ProductPageC />}></Route>
               <Route exact path="/Productos" element={<Productos />}></Route>
+              <Route path="/Cart" element={<ShoppingCart/>}></Route>
             </Routes>
 
-            <Footer />
-
+            <Footer/>
+            
+         
           </chipContext.Provider>
         </drinkContext.Provider>
       </burgerContext.Provider>
