@@ -10,8 +10,8 @@ export default function CarouselProducts() {
     
   return (
     
-    <div className="max-w-2xl mx-auto  bg-black" data-aos="zoom-in">
-        <h1 className="text-center text-2xl text-white p-4">PROBA NUESTROS PRODUCTOS</h1>
+    <div className="max-w-2xl mx-auto  bg-black px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" data-aos="zoom-in">
+        <h2 className="mb-4 text-3xl tracking-tight  text-center text-white dark:text-white">Proba nuestros productos</h2>
         <div id="default-carousel" className="relative" data-carousel="slide">
             
             <div className="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
@@ -58,3 +58,4 @@ export default function CarouselProducts() {
     </div>
   );
 }
+
