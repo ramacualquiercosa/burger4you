@@ -19,17 +19,17 @@ export default function CarouselProducts() {
                 <div className="hidden duration-700 ease-in-out " data-carousel-item>
                     <span className="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
                     <img src={carouselImg[1]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 bg-gray-800" alt="..."/>
-                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Hamburguesas</a>
+                    <a href="/Productos?item=burger" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Hamburguesas</a>
                 </div>
                 
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src={carouselImg[4]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 " alt="..."/>
-                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Bebidas</a>
+                    <a href="/Productos?item=drink" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Bebidas</a>
                 </div>
               
                 <div className="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src={carouselImg[5]} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
-                    <a href="#" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Entradas</a>
+                    <a href="/Productos?item=chip" className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-white text-center text-4xl drop-shadow-lg">Entradas</a>
                 </div>
             </div>
             
