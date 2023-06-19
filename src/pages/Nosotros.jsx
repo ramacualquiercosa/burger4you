@@ -6,14 +6,23 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
+import Slider from "../components/Slider/Slider";
+
+  //Slider
+  const mockImagenes = [
+    'https://picsum.photos/id/1020/400',
+    'https://picsum.photos/id/1025/400',
+    'https://picsum.photos/id/1008/400',
+];
+
 const features = [
   {
     name: "Premio a mejor hamburguesa del país",
-    description: "Brindado por el Instituto nacional de gatronomía",
+    description: "Brindado por el Instituto nacional de gastronomía",
     icon: BookmarkIcon,
   },
   {
-    name: "40000 clientes nos eligen cada aó",
+    name: "40000 clientes nos eligen cada año",
     description:
       "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
     icon:  UserGroupIcon,
@@ -34,7 +43,11 @@ const features = [
 
 function Nosotros() {
   return (
+  
     <div className="bg-dark py-24 sm:py-32" data-aos="zoom-in">
+      <div>
+      <Slider imagenes={mockImagenes} />
+      </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="mb-4 text-3xl tracking-tight  text-center  text-red-900 ">
