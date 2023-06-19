@@ -1,5 +1,6 @@
 import React from 'react';
 import estilos from './Slider.module.css';
+import { Button } from 'flowbite-react';
 
 function Slider({ imagenes }) {
 	// Variables y Estados
@@ -19,7 +20,7 @@ function Slider({ imagenes }) {
 
 	return (
 		<div className={estilos.container}>
-			<button img='./burger1.jpg' onClick={anteriorImagen}>←</button>
+			<button onClick={anteriorImagen}>←</button>
 			{imagenes.map((imagen, index) => {
 				return (
 					<div
@@ -35,7 +36,20 @@ function Slider({ imagenes }) {
 				);
 			})}
 			<button onClick={siguienteImagen}>→</button>
+		<div>
+			<h1>Quienes somos</h1>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde eligendi dicta iure veniam nostrum perspiciatis ipsa eaque quibusdam dignissimos dolore, quaerat distinctio aliquid blanditiis cupiditate expedita, quasi maiores placeat voluptatibus!</p>	
+			<div class="px-5 py-2">
+              <a
+                href="/Nosotros"
+                class="text-sm leading-6 text-slate-100 hover:text-gray-900"
+              >
+                Ver mas
+              </a>
+            </div>
 		</div>
+		</div>
+		
 	);
 }
 

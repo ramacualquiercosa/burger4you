@@ -6,6 +6,7 @@ import drink2 from "./drink2.jpg"
 import chip1 from "./chip1.jpg"
 import chip2 from "./chip2.jpg"
 
+
 const carouselImg = [ burger1, burger2, burger3, drink1, drink2, chip1, chip2 ]
 
 export default carouselImg
