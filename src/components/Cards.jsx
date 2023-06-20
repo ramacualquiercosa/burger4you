@@ -1,123 +1,76 @@
 import React, { useContext } from "react";
-import { burgerContext } from "../App";
-import { drinkContext } from "../App";
-import { chipContext } from "../App";
-import { Link } from 'react-router-dom';
+import { productsContext } from "../App";
 
+function Test({
+  allProducts,
+  setAllProducts,
+  countProducts,
+  setCountProducts,
+  total,
+  setTotal,
+}) {
+  let products = useContext(productsContext);
 
-
-function Test({FiltroProducto}) {
-  
-    let titulo = "PRODUCTOS";
-    let burger = useContext(burgerContext);
-    let drink = useContext(drinkContext);
-    let chip = useContext(chipContext);
-
-    if(FiltroProducto === "burger"){
-      drink = null;
-      chip = null;
-      titulo= "Hamburguesas";
+  const onAddProduct = (product) => {
+    if (allProducts.find((item) => item.id === product.id)) {
+      const products = allProducts.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setTotal(total + product.price * product.quantity);
+      setCountProducts(countProducts + product.quantity);
+      return setAllProducts([...products]);
     }
 
-    if(FiltroProducto === "drink"){
-      burger = null;
-      chip = null;
-      titulo= "Bebidas";
-    }
-
-    if(FiltroProducto === "chip"){
-      drink = null;
-      burger = null;
-      titulo= "Entradas";
-    }
+    setTotal(total + product.price * product.quantity);
+    setCountProducts(countProducts + product.quantity);
+    setAllProducts([...allProducts, product]);
+  };
 
   return (
     <>
-      <div className="bg-dark" >
+      
+      <div className="bg-dark z-0">
+        
         <div className="mx-auto max-w-1xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h1 className="text-center text-3xl text-white" data-aos="zoom-in">{titulo}</h1>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-14 ">
+            {products.map((item, index) => (
+              <div>
+                <div
+                  key={index}
+                  className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                >
+                  <div
+                    className="bg-contain bg-no-repeat bg-center h-full"
+                    style={{ backgroundImage: `url(${item.img})` }}
+                  ></div>
+                </div>
+                <div className="h-1/3">
+                  <h2 className="mt-4 text-2xl text-white">{item.name}</h2>
+                  <p className="text-white text-justify w-80">
+                    {item.description}
+                  </p>
+                  <h3 className="mt-1 text-lg font-medium text-white">
+                    ${item.price}
+                  </h3>
 
-          <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-14" >        
-          {burger?.map((item, index) => (
-
-              <Link key={index} to={`/ProductPageB/${index}`}>
-
-              <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
-              <div className="bg-contain bg-no-repeat bg-center h-full"
-                style={{ backgroundImage: `url(${item.img})`}}></div>
-                
+                  <button
+                    className="mt-6 w-full transform rounded-md bg-gray-800 px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-300 hover:bg-gray-600 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                    onClick={() => onAddProduct(item)}
+                  >
+                    Agregar a mi carrito
+                  </button>
+                </div>
               </div>
-              <div className="h-1/3">
-
-              <h2 className="mt-4 text-2xl text-white">{item.name}</h2>
-              <h3 className="mt-1 text-lg font-medium text-white">{item.price}</h3>
-              
-            <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-              Agregar a mi carrito
-            </button>
-            </div>
-            </Link>
-
-
-        ))}
-              </div>
-
-
-      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-12">        
-      {drink?.map((item, index) => (
-
-          <Link key={index} to={`/ProductPage/${index}`}>
-
-            <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
-            <div className="bg-contain bg-no-repeat bg-center h-full"
-              style={{ backgroundImage: `url(${item.img})`}}></div>
-          
+            ))}
+          </div>
         </div>
-        <div className="h-1/3">
-
-            <h2 className="mt-4 text-2xl text-white">{item.name}</h2>
-            <h3 className="mt-1 text-lg font-medium text-white">{item.price}</h3>
-        
-            <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-              Agregar a mi carrito
-            </button>
-        </div>
-      </Link>
-
-
-  ))}
-        </div>
-
-        
-      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-16 justify-items-center pt-12">        
-      {chip?.map((item, index) => (
-
-      <Link key={index} to={`/ProductPageC/${index}`}>
-
-        <div  key={index} className="aspect-h-1 aspect-w-1 h-96 w-96 object-center overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7" data-aos="zoom-in">
-        <div className="bg-contain bg-no-repeat bg-center h-full"
-          style={{ backgroundImage: `url(${item.img})`}}></div>
-          
-        </div>
-        <div className="h-1/3">
-
-        <h2 className="mt-4 text-2xl text-white">{item.name}</h2>
-        <h3 className="mt-1 text-lg font-medium text-white">{item.price}</h3>
-        
-        <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-              Agregar a mi carrito
-        </button>
       </div>
-      </Link>
-
-
-  ))}
-        </div>
-
-        </div>
-        </div>
     </>
   );
 }
 
 export default Test;
+
+
+            
+           

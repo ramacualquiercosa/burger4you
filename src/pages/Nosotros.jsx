@@ -37,7 +37,7 @@ function Nosotros() {
     <div className="bg-dark py-24 sm:py-32" data-aos="zoom-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="mb-4 text-3xl tracking-tight  text-center  text-red-900 ">
+          <h2 className="mb-4 text-3xl tracking-tight  text-center  text-white ">
             Burger 4U
           </h2>
           <p className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">
