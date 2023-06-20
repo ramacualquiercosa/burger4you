@@ -9,77 +9,85 @@ import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Productos from "./pages/Productos";
 import Contacto from "./pages/contacto";
-
 import Nosotros from "./pages/Nosotros";
-import ShoppingCart from "./pages/ShoppingCart";
+
+
 //Contextos
-export const burgerContext = React.createContext();
-export const drinkContext = React.createContext();
-export const chipContext = React.createContext();
-export const cartContext = React.createContext();
+export const productsContext = React.createContext();
 
 
 
 function App() {
+
+
+
+  const [allProducts, setAllProducts] = useState([]);
+	const [total, setTotal] = useState(0);
+	const [countProducts, setCountProducts] = useState(0);
+
+
+
+
   //Estados
-  const [burger, setBurger] = useState([]);
-  const [drink, setDrink] = useState([]);
-  const [chip, setChip] = useState([]);
+    const [products, setProducts] = useState([]);
   
 
   useEffect(() => {
-    getBurger();
-    getDrink();
-    getChip();
+    
+    getProducts();
     
   }, []);
 
  //Fetch
-  async function getBurger() {
-    const respBurger = await axios.get("https://burger-bad89-default-rtdb.firebaseio.com/burgers.json");
-    setBurger(respBurger.data);
+  
+  async function getProducts() {
+    const respProducts = await axios.get("https://products-736ef-default-rtdb.firebaseio.com/products.json");
+    setProducts(respProducts.data);
   }
 
-  async function getDrink() {
-    const respDrink = await axios.get("https://drink-c644c-default-rtdb.firebaseio.com/drinks.json");
-    setDrink(respDrink.data);
-  }
 
-  async function getChip() {
-    const respChip = await axios.get("https://chip-4890a-default-rtdb.firebaseio.com/chips.json");
-    setChip(respChip.data);
-  }
+
+
   
   return (
     <>
-      <burgerContext.Provider value={burger}>
-        <drinkContext.Provider value={drink}>
-          <chipContext.Provider value={chip}>
+    <productsContext.Provider value={products}>
+      
             
-            <Navbar/>
-
+            <Navbar allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}/>
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/Home" element={<Home />} />
               <Route exact path="/Contacto" element={<Contacto/>} />
               <Route exact path="/Nosotros" element={<Nosotros/>} />
-              <Route exact path="/Productos" element={<Productos />}></Route>
-              <Route path="/Cart" element={<ShoppingCart/>}></Route>
+              <Route exact path="/Productos" element={<Productos 
+              allProducts={allProducts}
+              setAllProducts={setAllProducts}
+              total={total}
+              setTotal={setTotal}
+              countProducts={countProducts}
+              setCountProducts={setCountProducts}
+                            
+              />}></Route>
+            
             </Routes>
 
             <Footer/>
             
          
-          </chipContext.Provider>
-        </drinkContext.Provider>
-      </burgerContext.Provider>
+          
+      </productsContext.Provider>
     </>
   );
 }
 
 export default App;
 
-// APIS
-// https://chip-4890a-default-rtdb.firebaseio.com/chips.json
-// https://drink-c644c-default-rtdb.firebaseio.com/drinks.json
-// https://burger-bad89-default-rtdb.firebaseio.com/burgers.json
+// API
+// https://products-736ef-default-rtdb.firebaseio.com/products.json
+
